@@ -1,7 +1,7 @@
 import express from 'express'
-import cors from 'cors'
 import bodyParser from 'body-parser'
-import mongoose from 'mongoose';
+import cors from 'cors'
+import dbConnection from './db.js';
 //Routes file paths
 
 
@@ -18,22 +18,9 @@ app.use(bodyParser.json());
 
 
 
-try{
-  const link = "mongodb+srv://Anjana_123:SSG0FPQcNKwnLX1I@mallsage.micefmh.mongodb.net/?retryWrites=true&w=majority";
-  mongoose.connect(link, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+dbConnection();
 
-  const {connection} = mongoose;
-  connection.once('open', ()=>{
-    console.log("mongo DB connection is success!!!")
-  })
-
-}catch(err){
-  console.log('Database Connection error:', err);
-}
 
 app.listen(PORT, ()=>{
-  console.log(`The server is running on ${PORT}`)
+  console.log(`The server is running on ${PORT}`);
 })
