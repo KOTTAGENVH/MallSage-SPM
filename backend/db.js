@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import {mongoose} from 'mongoose';
 
-const dbConnection = async () => {
+const db = async () => {
   try {
     const link = 'mongodb+srv://Anjana_123:SSG0FPQcNKwnLX1I@mallsage.micefmh.mongodb.net/mallsage_DB?retryWrites=true&w=majority';
     mongoose.connect(link, {
@@ -13,8 +13,8 @@ const dbConnection = async () => {
       console.log('MongoDB Connection Success!');
     });
   } catch (err) {
-    console.error('Database connection error:', err);
+    console.log('Database connection error:', err);
   }
 };
 
-export default dbConnection;
+export default db;

@@ -1,7 +1,8 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import cors from 'cors'
-import dbConnection from './db.js';
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import db from './db.js'
+
 //Routes file paths
 
 
@@ -17,8 +18,8 @@ app.use(bodyParser.json());
 
 
 
-
-dbConnection();
+//db connection
+db();
 
 
 app.listen(PORT, ()=>{
