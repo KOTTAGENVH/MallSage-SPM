@@ -1,9 +1,8 @@
-import {mongoose} from 'mongoose';
+import { mongoose } from 'mongoose';
 
 const db = async () => {
   try {
-    const link = 'mongodb+srv://Anjana_123:SSG0FPQcNKwnLX1I@mallsage.micefmh.mongodb.net/mallsage_DB?retryWrites=true&w=majority';
-    mongoose.connect(link, {
+    mongoose.connect(process.env.link, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
