@@ -5,8 +5,8 @@ import nodemailer from "nodemailer";
 const mailTransporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "mallsage34@gmail.com",
-    pass: "jwzaldpwytqqghlj",
+    user: "",
+    pass: "",
   },
 });
 
@@ -173,7 +173,7 @@ const addNoReserved = async (req, res) => {
     const expirationTime = new Date(currentDateTime.getTime() + 20 * 60 * 1000); // Add 20 minutes
     if (userRole === "customer") {
       const emailDetails = {
-        from: "mallsage34@gmail.com",
+        from: "",
         to: email, // Use the customer's email
         subject: "Holding Space in a Resting Locations",
         html: `<p>Dear Customer,</p>
