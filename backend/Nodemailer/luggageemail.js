@@ -10,8 +10,8 @@ let mailTransporter = nodemailer.createTransport({
 })
 
 let details = {
-    from: "mallsage34@gmail.com",
-    to: "novenkottage@gmail.com",
+    from: "",
+    to: "",
     subject: "testing out first sender"
 }
 
